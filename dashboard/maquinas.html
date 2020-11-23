@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>República</title>
-    <script src="path/tp/chartjs/dist/Chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <!--<script src="path/tp/chartjs/dist/Chart.js"></script>-->
+    <link rel="stylesheet" href="/css/main.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2? family = Montserrat & display = swap');
@@ -70,6 +70,16 @@ body {
     position: relative;
     margin: 5vh;
 }
+.container02 main .box-grafico p {
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Montserrat, sans-serif;
+}
+.gorow .container02 main .box-grafico canvas {
+    width: 100px;
+    height: 100px;
+}
 
     </style>
 </head>
@@ -87,38 +97,80 @@ body {
         </div>
     </header>
     <!--CONTENT-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <div class="gorow">
     <div class="container02">
         <main>
             <div class="box-grafico">
                 <p>CPU</p>
+                <canvas id="myChart"></canvas>
             </div>
         </main>
     </div>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <div class="container02">
+        <main>
+            <div class="box-grafico">
+                <p>Disco</p>
+                <canvas id="myChartTwo"></canvas>
+            </div>
+        </main>
+    </div>
+    <div class="container02">
+        <main>
+            <div class="box-grafico">
+                <p>Memória</p>
+                <canvas id="myChartThree"></canvas>
+            </div>
+        </main>
+    </div>
+</div>
+    
 </body>
 </html>
+
+
 <script>
-    var ctx = document.getElementById('myChart');
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var ctx = $('#myChart');
-    var ctx = 'myChart';
-    let chart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: {
-        layout: {
-            padding: {
-                left: 50,
-                right: 0,
-                top: 0,
-                bottom: 0
-            }
-        }
-    }
-});
-var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: data,
-    options: options
-});
+  var ctx = document.getElementById("myChart");
+  var ctx2 = document.getElementById("myChartTwo");
+  var ctx3 = document.getElementById("myChartThree");
+  // type, data, options
+  var chartGraph = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          labels: ['baixo', 'moderado', 'alto'],
+          datasets: [{
+              label: "taxa teste",
+              data: [5],
+              borderWidth: 1,
+              borderColor: 'rgba( 95, 158, 160, 1)',
+              backgroundColor: 'rgba( 95, 158, 160, 1)'
+          }]
+      }
+  });
+  var chartGraph = new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+          labels: ['baixo', 'moderado', 'alto'],
+          datasets: [{
+              label: 'taxa teste',
+              data: [5],
+              borderWidth: 1,
+              borderColor: 'rgba(95, 158, 160, 1)',
+              backgroundColor: 'rgba(95, 158, 160, 1)'
+          }]
+      }
+  })
+  var chartGraph = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+          labels: ['baixo', 'moderado', 'alto'],
+          datasets: [{
+              label: 'taxa teste',
+              data: [5],
+              borderWidth: 1,
+              borderColor: 'rgba(95, 158, 160, 1)',
+              backgroundColor: 'rgba(95, 158, 160, 1)'
+          }]
+      }
+  })
 </script>
