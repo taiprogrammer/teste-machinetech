@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>República</title>
+    <script src="path/tp/chartjs/dist/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2? family = Montserrat & display = swap');
+        @import url('https://fonts.googleapis.com/css2? family = Lobster & display = swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+:root {
+    --blue:#007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --background: #f7f5f5;
+}
+body {
+    background-color: var(--background);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container main .box-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.container main p {
+    color: rgb(78, 77, 77);
+    margin-right: 50vw;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 42px;
+    position: relative;
+}
+.container main a {
+    color: rgb(87, 87, 87);
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+    margin: 1vw;
+}
+.container main a:hover {
+    color: rgb(145, 145, 146);
+}
+.container02 main .box-grafico {
+    position: relative;
+    margin: 5vh;
+}
+
+    </style>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <div class="container">
+            <main>
+                <div class="box-row">
+                    <p>REPÚBLICA</p>
+                    <a href="#">INICIO</a>
+                    <a href="#">SUPORTE</a>
+                </div>
+            </main>
+        </div>
+    </header>
+    <!--CONTENT-->
+    <div class="container02">
+        <main>
+            <div class="box-grafico">
+                <p>CPU</p>
+            </div>
+        </main>
+    </div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+</body>
+</html>
+<script>
+    var ctx = document.getElementById('myChart');
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx = $('#myChart');
+    var ctx = 'myChart';
+    let chart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        layout: {
+            padding: {
+                left: 50,
+                right: 0,
+                top: 0,
+                bottom: 0
+            }
+        }
+    }
+});
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: options
+});
+</script>
